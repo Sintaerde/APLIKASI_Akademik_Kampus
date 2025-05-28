@@ -60,9 +60,9 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'students' => [
             'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\User::class),
+            'model' => env('AUTH_MODEL', App\Models\Student::class),
         ],
 
         // 'users' => [
@@ -115,7 +115,7 @@ return [
     'guards' => [
     'api' => [
         'driver' => 'sanctum',
-        'provider' => 'users',
+        'provider' => 'students',
     ],
 ],
 

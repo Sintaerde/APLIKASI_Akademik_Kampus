@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('stock', function (Blueprint $table) {
-            $table->ulid('id')->primary();
-            $table->foreignUlid('id_barang')->constrained('barang')->cascadeOnDelete();
-            $table->integer('limit');
+        Schema::create('courses', function (Blueprint $table) {
+            $table->string('course_id')->primary(); // custom primary key
+            $table->string('name');
+            $table->string('code');
+            $table->string('credits');
+            $table->string('semester');
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('stock');
+        Schema::dropIfExists('courses');
     }
 };
